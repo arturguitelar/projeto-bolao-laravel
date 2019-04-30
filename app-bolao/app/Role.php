@@ -14,4 +14,20 @@ class Role extends Model
     protected $fillable = [
         'name', 'description',
     ];
+
+    /**
+     * Usuários que pertencem a esta função.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
+
+    /**
+     * Permissões que pertencem a esta função.
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany('App\Permission');
+    }
 }

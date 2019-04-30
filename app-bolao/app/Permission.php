@@ -14,4 +14,12 @@ class Permission extends Model
     protected $fillable = [
         'name', 'description',
     ];
+
+    /**
+     * Funções que pertencem a esta permissão.
+     */
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
 }
