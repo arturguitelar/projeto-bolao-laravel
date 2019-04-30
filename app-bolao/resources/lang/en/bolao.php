@@ -35,4 +35,7 @@ return [
     'delete_this_record' => 'Delete this record?',
     'registration_deleted_successfully' => 'Registration deleted sucessfully!',
     'error_deleting_record' => 'Error deleting record!',
+    'description' => 'Description',
+    'permission_list' => 'Permissions',
+    'permission' => 'permission',
 ];
