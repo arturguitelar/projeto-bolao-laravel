@@ -4,6 +4,8 @@ Este projeto é um aplicativo de bolão de apostas criado para estudo utilizando
 
 Utiliza [Laravel](https://laravel.com/) como framework.
 
+Versão Laravel utilizada: 5.6.39.
+
 **Coisas interessantes abordadas no curso durante este projeto:**
 - OOP.
 - MVC.
@@ -18,4 +20,4 @@ Utiliza [Laravel](https://laravel.com/) como framework.
 - Sistema Acl.
 - Modelos de relacionamento.
 
->> Em progreso...
+> Em progreso...
