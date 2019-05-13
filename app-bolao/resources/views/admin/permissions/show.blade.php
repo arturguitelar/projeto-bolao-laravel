@@ -10,7 +10,7 @@
         @endbreadcrumb_component
 
         <p>{{ __('bolao.name') }}: {{ $register->name }}</p>
-        <p>{{ __('bolao.email') }}: {{ $register->email }}</p>
+        <p>{{ __('bolao.description') }}: {{ $register->description }}</p>
 
         @if ($delete)            
             @form_component([
