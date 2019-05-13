@@ -37,4 +37,5 @@ return [
     'description' => 'Descrição',
     'permission_list' => 'Permissões',
     'permission' => 'permissão',
+    'create_or_edit' => 'Criar ou Editar',
 ];

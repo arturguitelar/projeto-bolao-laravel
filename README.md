@@ -13,7 +13,7 @@ Versão Laravel utilizada: 5.6.39.
 - Crud.
 - Trabalhando com repositórios.
 - Como criar e trabalhar com interfaces.
-- Material Design.
+- Bootstrap 4.
 - Templates e componentes com o Blade.
 - Injeção de dependência.
 - Sistema de idiomas (internacionalização) do Laravel.
