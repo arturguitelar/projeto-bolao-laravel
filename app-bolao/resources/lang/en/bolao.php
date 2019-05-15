@@ -20,7 +20,7 @@ return [
     'list' => ':users List',
     'dashboard' => 'Dashboard',
     'list' => ':page List',
-    'user_list' => 'User',
+    'user_list' => 'Users',
     'user' => 'user',
     'create_crud' => 'Add :page',
     'edit_crud' => 'Edit :page',
@@ -39,4 +39,6 @@ return [
     'permission_list' => 'Permissions',
     'permission' => 'permission',
     'create_or_edit' => 'Create or Edit',
+    'role_list' => 'Roles',
+    'role' => 'role',
 ];

@@ -38,4 +38,6 @@ return [
     'permission_list' => 'Permissões',
     'permission' => 'permissão',
     'create_or_edit' => 'Criar ou Editar',
+    'role_list' => 'Funções',
+    'role' => 'função',
 ];
