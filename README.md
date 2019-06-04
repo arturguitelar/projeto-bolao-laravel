@@ -21,3 +21,5 @@ Versão Laravel utilizada: 5.6.39.
 - Modelos de relacionamento.
 
 > Em progresso...
+
+Este projeto utiliza a [licença MIT](https://opensource.org/licenses/MIT).

@@ -10,7 +10,7 @@ use Validator;
 class PermissionController extends Controller
 {    
     private $route = 'permissions';
-    private $paginate = 5;
+    private $paginate = 10;
     private $search = ['name','description'];
     private $model;
     

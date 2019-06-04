@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\RoleRepositoryInterface;
+use App\Repositories\Contracts\PermissionRepositoryInterface;
 use Validator;
 
 class RoleController extends Controller
@@ -13,15 +14,19 @@ class RoleController extends Controller
     private $paginate = 10;
     private $search = ['name','description'];
     private $model;
+    private $modelPermission;
     
-    public function __construct(RoleRepositoryInterface $model)
+    public function __construct(
+        RoleRepositoryInterface $model, 
+        PermissionRepositoryInterface $modelPermission
+    )
     {       
-        $this->model = $model;   
+        $this->model = $model;
+        $this->modelPermission = $modelPermission;
     }
     
     /**
-    * Listagem de recurso do storage.
-    *
+    * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
     public function index(Request $request)
@@ -40,16 +45,16 @@ class RoleController extends Controller
         $routeName = $this->route;
         
         $breadcrumb = [
-            (object)['url'=>route('home'),'title'=>trans('bolao.home')],
-            (object)['url'=>'','title'=>trans('bolao.list',['page'=>$page])],
+            (object)['url'=>route('home'), 'title'=>trans('bolao.home')],
+            (object)['url'=>'', 'title'=>trans('bolao.list', ['page'=>$page])],
         ];
         
-        return view('admin.'.$routeName.'.index',compact('list','search','page','routeName','columnList','breadcrumb'));
+        return view('admin.'.$routeName.'.index',compact(
+            'list', 'search', 'page', 'routeName', 'columnList', 'breadcrumb'
+        ));
     }
     
     /**
-    * Mostra um formulário para criar um novo recurso.
-    *
     * @return \Illuminate\Http\Response
     */
     public function create()
@@ -57,19 +62,21 @@ class RoleController extends Controller
         $routeName = $this->route;
         $page = trans('bolao.role_list');
         $page_create = trans('bolao.role');
+
+        $permissions = $this->modelPermission->all('name', 'ASC');
         
         $breadcrumb = [
-            (object)['url'=>route('home'),'title'=>trans('bolao.home')],
-            (object)['url'=>route($routeName.".index"),'title'=>trans('bolao.list',['page'=>$page])],
-            (object)['url'=>'','title'=>trans('bolao.create_crud',['page'=>$page_create])],
+            (object)['url'=>route('home'), 'title'=>trans('bolao.home')],
+            (object)['url'=>route($routeName.".index"), 'title'=>trans('bolao.list', ['page'=>$page])],
+            (object)['url'=>'', 'title'=>trans('bolao.create_crud', ['page'=>$page_create])],
         ];
         
-        return view('admin.'.$routeName.'.create',compact('page','page_create','routeName','breadcrumb'));
+        return view('admin.'.$routeName.'.create',compact(
+            'page', 'page_create', 'routeName', 'breadcrumb', 'permissions'
+        ));
     }
     
     /**
-    * Grava um novo recurso no storage.
-    *
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\Response
     */
@@ -93,8 +100,6 @@ class RoleController extends Controller
     }
     
     /**
-    * Mostra um recurso especificado.
-    *
     * @param  int  $id
     * @param  Request  $request
     * @return \Illuminate\Http\Response
@@ -134,8 +139,6 @@ class RoleController extends Controller
     }
     
     /**
-    * Show the form for editing the specified resource.
-    *
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
@@ -147,15 +150,17 @@ class RoleController extends Controller
         if($register){
             $page = trans('bolao.role_list');
             $page2 = trans('bolao.role');
+
+            $permissions = $this->modelPermission->all('name', 'ASC');
             
             $breadcrumb = [
-                (object)['url'=>route('home'),'title'=>trans('bolao.home')],
-                (object)['url'=>route($routeName.".index"),'title'=>trans('bolao.list',['page'=>$page])],
-                (object)['url'=>'','title'=>trans('bolao.edit_crud',['page'=>$page2])],
+                (object)['url'=>route('home'), 'title'=>trans('bolao.home')],
+                (object)['url'=>route($routeName.".index"), 'title'=>trans('bolao.list', ['page'=>$page])],
+                (object)['url'=>'', 'title'=>trans('bolao.edit_crud', ['page'=>$page2])],
             ];
             
             return view('admin.'.$routeName.'.edit', compact(
-                'register','page','page2','routeName','breadcrumb'
+                'register', 'page', 'page2', 'routeName', 'breadcrumb', 'permissions'
             ));            
         }
         
@@ -163,8 +168,6 @@ class RoleController extends Controller
     }
     
     /**
-    * Atualiza um recurso especificado no storage.
-    *
     * @param  \Illuminate\Http\Request  $request
     * @param  int  $id
     * @return \Illuminate\Http\Response
@@ -189,11 +192,9 @@ class RoleController extends Controller
     }
     
     /**
-    * Remove o recurso especificado do storage.
-    * - Redireciona a rota após a remoção.
-    *
-    * @param  int  $id
-    * @return redirect
+     * @param  int  $id
+     * @return redirect
+     * - Redireciona a rota após a remoção do registro.
     */
     public function destroy($id)
     {
@@ -209,8 +210,6 @@ class RoleController extends Controller
 
     /* Mensagens */
     /**
-     * Envia uma mensagem especificada para a sessão atual.
-     * 
      * @param string $msg Mensagem.
      * @param string $status Status da mensagem. Ex: success error notification.
      * 
