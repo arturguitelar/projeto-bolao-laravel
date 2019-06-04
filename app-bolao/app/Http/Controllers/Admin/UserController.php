@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\Contracts\RoleRepositoryInterface;
 use Validator;
 use Illuminate\Validation\Rule;
 
@@ -14,10 +15,15 @@ class UserController extends Controller
     private $paginate = 10;
     private $search = ['name','email'];
     private $model;
+    private $modelRole;
     
-    public function __construct(UserRepositoryInterface $model)
+    public function __construct(
+        UserRepositoryInterface $model,
+        RoleRepositoryInterface $modelRole
+    )
     {       
-        $this->model = $model;   
+        $this->model = $model;
+        $this->modelRole = $modelRole;
     }
     
     /**
@@ -58,6 +64,8 @@ class UserController extends Controller
         $routeName = $this->route;
         $page = trans('bolao.user_list');
         $page_create = trans('bolao.user');
+
+        $roles = $this->modelRole->all('name', 'ASC');
         
         $breadcrumb = [
             (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -65,7 +73,9 @@ class UserController extends Controller
             (object)['url'=>'','title'=>trans('bolao.create_crud',['page'=>$page_create])],
         ];
         
-        return view('admin.'.$routeName.'.create',compact('page','page_create','routeName','breadcrumb'));
+        return view('admin.'.$routeName.'.create',compact(
+            'page', 'page_create', 'routeName', 'breadcrumb', 'roles'
+        ));
     }
     
     /**
@@ -150,6 +160,8 @@ class UserController extends Controller
             $page = trans('bolao.user_list');
             $page2 = trans('bolao.user');
             
+            $roles = $this->modelRole->all('name', 'ASC');
+            
             $breadcrumb = [
                 (object)['url'=>route('home'),'title'=>trans('bolao.home')],
                 (object)['url'=>route($routeName.".index"),'title'=>trans('bolao.list',['page'=>$page])],
@@ -157,7 +169,7 @@ class UserController extends Controller
             ];
             
             return view('admin.'.$routeName.'.edit', compact(
-                'register','page','page2','routeName','breadcrumb'
+                'register', 'page', 'page2', 'routeName', 'breadcrumb', 'roles'
             ));            
         }
         

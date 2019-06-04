@@ -33,4 +33,42 @@
         <label for="password_confirmation">{{ __('bolao.confirm_password') }}</label>
         <input type="password" class="form-control" name="password_confirmation" value="">
     </div>
+
+    <div class="form-group col-6">
+        <label for="roles">{{ __('bolao.role_list') }}</label>
+        <select multiple class="form-control" name="roles[]">
+            @foreach ($roles as $key => $value)
+                @php
+                    $select = '';
+                    
+                    /**
+                     * Neste caso, impede que o select atualize sem registros
+                     * caso um dos campos peça validação.
+                     */
+                    if (old('roles') ?? false) {
+                        foreach (old('roles') as $key => $id) {
+
+                            if ($id == $value->id) $select = 'selected';
+                        }
+                    } else {
+
+                        /**
+                         * Se existir um registro, então o select já deve
+                         * vir marcado com as opções deste registro.
+                         */
+                        if ($register ?? false) {
+
+                            foreach ($register->roles as $key => $role) {
+                                
+                                if ($role->id == $value->id) $select = 'selected';
+                            }
+                        }
+                    }
+
+                @endphp
+
+                <option {{ $select }} value="{{ $value->id }}">{{ $value->name }}</option>
+            @endforeach
+        </select>
+    </div>
 </div>
