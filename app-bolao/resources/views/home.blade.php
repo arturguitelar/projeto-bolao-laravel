@@ -16,7 +16,11 @@
                     @endif
 
                     <div class="row">
-                        
+                        @php
+                            $id_dono_bolao = 2;
+                        @endphp
+
+                        @can('lista-bolao', $id_dono_bolao)                            
                         <div class="col">
 
                             <div onclick="window.location='{{ route('users.index') }}'"
@@ -28,6 +32,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endcan
 
                         <div class="col">
 
