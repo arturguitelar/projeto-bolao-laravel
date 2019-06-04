@@ -11,7 +11,7 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {    
     private $route = 'users';
-    private $paginate = 5;
+    private $paginate = 10;
     private $search = ['name','email'];
     private $model;
     
