@@ -89,7 +89,7 @@ class RoleController extends Controller
                 'description' => 'required|string|max:355',
             ]
         )->validate();
-            
+        
         if($this->model->create($data)){
             $this->sessionMessage('record_added_successfully', 'success');
             return redirect()->back();
