@@ -28,10 +28,37 @@ class User extends Authenticatable
     ];
 
     /**
-     * Funções que pertencem ao usuário.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany Roles que pertencem ao usuário.
      */
     public function roles()
     {
         return $this->belongsToMany('App\Role');
+    }
+    
+    /**
+     * @param string $role
+     */
+    public function hasRole($role)
+    {
+        if (is_string($role)) {
+            $role = Role::where('name', '=', $role)->firstOrFail();
+        }
+        return (boolean) $this->roles()->find($role->id);
+    }
+
+    /**
+     * @param array $roles Lista de roles.
+     * @return boolean O user possui as roles especificadas?
+     * - Nota: o método count() retorna um valor positivo para true e valor zero pra false.
+     */
+    public function hasRoles($roles)
+    {
+        $userRoles = $this->roles;
+        return $roles->intersect($userRoles)->count();
+    }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('Admin');
     }
 }
