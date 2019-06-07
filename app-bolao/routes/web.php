@@ -31,8 +31,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/* Área admin dos usuários do site */
+Route::middleware('auth')->namespace('Admin')->group(function() {
+    
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
+/* Área admin do sistema */
 Route::prefix('admin')->middleware('auth')->namespace('Admin')->group(function () {
     
     /* Users */
