@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+        $page = trans('bolao.dashboard');
+        return view('home', compact('page'));
     }
 }
