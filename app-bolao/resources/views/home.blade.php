@@ -17,7 +17,7 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('img/portfolio/03-thumbnail.jpg')}}" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>@lang('bolao.list', [ 'page' => __('bolao.user_list')])</h4>
@@ -34,7 +34,7 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('img/portfolio/04-thumbnail.jpg') }}" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>@lang('bolao.list', [ 'page' => __('bolao.role_list')])</h4>
@@ -50,7 +50,7 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('img/portfolio/05-thumbnail.jpg') }}" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>@lang('bolao.list', [ 'page' => __('bolao.permission_list')])</h4>

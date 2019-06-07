@@ -19,6 +19,12 @@ Versão Laravel utilizada: 5.6.39.
 - Sistema de idiomas (internacionalização) do Laravel.
 - Sistema Acl.
 - Modelos de relacionamento.
+- Criação e utilização de Seeders*.
+
+*Para utilizar os seeders deste projeto, basta rodar o comando:
+```
+php artisan db:seed
+```
 
 > Em progresso...
 

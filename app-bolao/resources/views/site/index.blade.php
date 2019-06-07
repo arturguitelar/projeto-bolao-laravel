@@ -29,7 +29,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/01-thumbnail.jpg') }}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Threads</h4>
@@ -43,7 +43,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/02-thumbnail.jpg') }}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Explore</h4>
@@ -57,7 +57,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/03-thumbnail.jpg') }}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Finish</h4>
@@ -71,7 +71,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/04-thumbnail.jpg') }}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Lines</h4>
@@ -85,7 +85,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/05-thumbnail.jpg')}} " alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Southwest</h4>
@@ -99,7 +99,7 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/portfolio/06-thumbnail.jpg') }}" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Window</h4>
