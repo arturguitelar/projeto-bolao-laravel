@@ -24,16 +24,20 @@ Route::get('lang', function () {
     
 })->name('lang');
 
-Route::get('/', function () {
+Route::get('/modelo', function () {
     
     return view('welcome');
 });
 
 Auth::routes();
 
+/* Site */
+Route::namespace('Site')->group(function () {
+    Route::get('/', 'PrincipalController@index')->name('principal');
+});
+
 /* Área admin dos usuários do site */
-Route::middleware('auth')->namespace('Admin')->group(function() {
-    
+Route::middleware('auth')->namespace('Admin')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });
 

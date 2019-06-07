@@ -3,6 +3,7 @@
 return [
     'lang' => 'pt-br',
     'login' => 'Login',
+    'logout' => 'Logout',
     'register' => 'Register',
     'name' => 'Name',
     'email' => 'E-mail',

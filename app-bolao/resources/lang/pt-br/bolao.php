@@ -3,6 +3,7 @@
 return [
     'lang' => 'en',
     'login' => 'Entrar',
+    'logout' => 'Sair',
     'register' => 'Cadastro',
     'name' => 'Nome',
     'email' => 'E-mail',
