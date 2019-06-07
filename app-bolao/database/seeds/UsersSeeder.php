@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersSeeder extends Seeder
 {
@@ -11,6 +12,20 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        echo 'Usuários criados. \n';
+        $admin = \App\User::firstOrCreate([
+            'email' => 'admin@mail.com'
+        ], [
+            'name' => 'Admin',
+            'password' => Hash::make('123456')
+        ]);
+
+        $manager = \App\User::firstOrCreate([
+            'email' => 'manager@mail.com'
+        ], [
+            'name' => 'Manager',
+            'password' => Hash::make('123456')
+        ]);
+
+        echo "Usuários criados com sucesso!\n";
     }
 }
