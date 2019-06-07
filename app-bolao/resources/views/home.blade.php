@@ -4,11 +4,15 @@
 
     @page_component(['col'=>12, 'page'=>$page])
 
+        @alert_component(['msg'=>session('msg'), 'status'=>session('status')])
+        @endalert_component
+
         <!-- Portfolio Grid -->
         <div id="portfolio">
+
             <div class="row">
 
-                @can('list-users')
+                @can('list-user')
                 <div class="col-md-4 col-sm-6 portfolio-item"
                     onclick="window.location='{{ route('users.index') }}'">
                     <a class="portfolio-link">

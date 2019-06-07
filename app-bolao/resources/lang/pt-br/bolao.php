@@ -41,6 +41,7 @@ return [
     'create_or_edit' => 'Criar ou Editar',
     'role_list' => 'Funções',
     'role' => 'função',
+    'access_denied' => 'Acesso negado.',
 
     /* site */
     'wellcome_to_the_betting_website' => 'Bem vindo ao site de bolões!',

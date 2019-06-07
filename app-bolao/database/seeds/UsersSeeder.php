@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\User;
 
 class UsersSeeder extends Seeder
 {
@@ -12,14 +13,16 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $admin = \App\User::firstOrCreate([
+        // Cria o Admin
+        User::firstOrCreate([
             'email' => 'admin@mail.com'
         ], [
             'name' => 'Admin',
             'password' => Hash::make('123456')
         ]);
 
-        $manager = \App\User::firstOrCreate([
+        // Cria o Gerente
+        User::firstOrCreate([
             'email' => 'manager@mail.com'
         ], [
             'name' => 'Manager',

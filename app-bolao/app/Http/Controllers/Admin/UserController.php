@@ -8,6 +8,7 @@ use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\Contracts\RoleRepositoryInterface;
 use Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {    
@@ -33,6 +34,13 @@ class UserController extends Controller
     */
     public function index(Request $request)
     {
+        if (Gate::denies('list-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $columnList = ['id'=>'#','name'=>trans('bolao.name'),'email'=>trans('bolao.email')];
         $page = trans('bolao.user_list');
         
@@ -61,6 +69,13 @@ class UserController extends Controller
     */
     public function create()
     {
+        if (Gate::denies('create-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $routeName = $this->route;
         $page = trans('bolao.user_list');
         $page_create = trans('bolao.user');
@@ -86,6 +101,13 @@ class UserController extends Controller
     */
     public function store(Request $request)
     {
+        if (Gate::denies('create-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $data = $request->all();
         
         Validator::make($data, [
@@ -113,6 +135,13 @@ class UserController extends Controller
     */
     public function show($id, Request $request)
     {
+        if (Gate::denies('show-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $routeName = $this->route;
         $register = $this->model->find($id);
         
@@ -153,6 +182,13 @@ class UserController extends Controller
     */
     public function edit($id)
     {
+        if (Gate::denies('edit-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $routeName = $this->route;
         $register = $this->model->find($id);
         
@@ -185,6 +221,13 @@ class UserController extends Controller
     */
     public function update(Request $request, $id)
     {
+        if (Gate::denies('edit-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         $data = $request->all();
 
         // Se o campo password está vazio, significa que o usuário não o modificou então não precisa ser enviado.
@@ -217,6 +260,13 @@ class UserController extends Controller
     */
     public function destroy($id)
     {
+        if (Gate::denies('delete-user')) {
+
+            $this->sessionMessage('access_denied', 'error');
+
+            return redirect()->route('home');
+        }
+
         if ($this->model->delete($id)) {
             $this->sessionMessage('registration_deleted_successfully', 'success');
         } else {

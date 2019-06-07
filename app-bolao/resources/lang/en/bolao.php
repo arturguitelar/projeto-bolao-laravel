@@ -42,6 +42,7 @@ return [
     'create_or_edit' => 'Create or Edit',
     'role_list' => 'Roles',
     'role' => 'role',
+    'access_denied' => 'Access denied.',
 
     /* site */
     'wellcome_to_the_betting_website' => 'Wellcome to the betting website!',
