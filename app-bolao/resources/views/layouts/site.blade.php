@@ -37,7 +37,9 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ route('principal') }}#portfolio">Bolões</a>
+                        <a class="nav-link js-scroll-trigger" href="{{ route('principal') }}#portfolio">
+                            @lang('bolao.betting_list')
+                        </a>
                     </li>
 
                     @guest

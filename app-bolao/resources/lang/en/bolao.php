@@ -42,4 +42,11 @@ return [
     'create_or_edit' => 'Create or Edit',
     'role_list' => 'Roles',
     'role' => 'role',
+
+    /* site */
+    'wellcome_to_the_betting_website' => 'Wellcome to the betting website!',
+    'enjoy_with_your_family' => 'Enjoy with your family',
+    'betting_list' => 'Betting List',
+    'join_or_create' => 'Join or Create!',
+    'check_the_list_here' => 'Check the list here.'
 ];

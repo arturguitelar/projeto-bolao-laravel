@@ -41,4 +41,11 @@ return [
     'create_or_edit' => 'Criar ou Editar',
     'role_list' => 'Funções',
     'role' => 'função',
+
+    /* site */
+    'wellcome_to_the_betting_website' => 'Bem vindo ao site de bolões!',
+    'enjoy_with_your_family' => 'Curta com sua família',
+    'betting_list' => 'Bolões',
+    'join_or_create' => 'Participe ou crie o seu!',
+    'check_the_list_here' => 'Confira aqui a lista.'
 ];

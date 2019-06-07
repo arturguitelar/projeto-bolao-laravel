@@ -5,9 +5,9 @@
 <header class="masthead">
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Studio!</div>
-            <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Confira a lista de bolões</a>
+            <div class="intro-lead-in">@lang('bolao.wellcome_to_the_betting_website')</div>
+            <div class="intro-heading text-uppercase">@lang('bolao.enjoy_with_your_family')</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">@lang('bolao.check_the_list_here')</a>
         </div>
     </div>
 </header>
@@ -17,8 +17,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Bolões</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">@lang('bolao.betting_list')</h2>
+                <h3 class="section-subheading text-muted">@lang('bolao.join_or_create')</h3>
             </div>
         </div>
         <div class="row">
