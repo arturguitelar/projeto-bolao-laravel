@@ -54,7 +54,7 @@ class AddACLSeeder extends Seeder
         ]);
 
         $editUser = Permission::firstOrCreate([
-            'name' => 'update-user'
+            'name' => 'edit-user'
         ], [
             'description' => 'Pode editar registros.'
         ]);
@@ -63,6 +63,12 @@ class AddACLSeeder extends Seeder
             'name' => 'delete-user'
         ], [
             'description' => 'Pode deletar registros.'
+        ]);
+
+        $aclUser = Permission::firstOrCreate([
+            'name' => 'acl'
+        ], [
+            'description' => 'Acesso ao ACL.'
         ]);
 
         // Relacionamento de Roles com Permissions

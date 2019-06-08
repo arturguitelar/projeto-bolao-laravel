@@ -30,6 +30,7 @@
                 </div>
                 @endcan
 
+                @can('acl')                    
                 <div class="col-md-4 col-sm-6 portfolio-item"
                     onclick="window.location='{{ route('roles.index') }}'">
                     <a class="portfolio-link">
@@ -61,6 +62,7 @@
                         <p class="text-muted">@lang('bolao.create_or_edit').</p>
                     </div>
                 </div>
+                @endcan
             </div>
         </div>
     @endpage_component

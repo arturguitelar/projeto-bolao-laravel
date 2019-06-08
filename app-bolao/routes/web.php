@@ -47,6 +47,10 @@ Route::prefix('admin')->middleware('auth')->namespace('Admin')->group(function (
     /* Users */
     Route::resource('/users', 'UserController');
     
+});
+
+Route::prefix('admin')->middleware(['auth', 'can:acl'])->namespace('Admin')->group(function () {
+    
     /* Permissions */
     Route::resource('/permissions', 'PermissionController');
 
