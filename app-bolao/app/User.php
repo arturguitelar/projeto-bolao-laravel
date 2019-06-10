@@ -27,12 +27,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany Roles que pertencem ao usuário.
-     */
     public function roles()
     {
         return $this->belongsToMany('App\Role');
+    }
+
+    public function bettings()
+    {
+        return $this->hasMany('App\Betting');
     }
     
     /**
