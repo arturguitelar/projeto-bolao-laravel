@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row"> 
     
     @php
         $fields = [
-            'name', 'description'
+            'title', 'value_result', 'extra_value', 'value_fee'
         ];
     @endphp
 

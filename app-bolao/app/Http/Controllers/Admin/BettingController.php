@@ -66,7 +66,7 @@ class BettingController extends Controller
     {
         $routeName = $this->route;
         $page = trans('bolao.betting_list');
-        $page_create = trans('bolao.betting');
+        $page_create = trans('bolao.bet');
         
         $breadcrumb = [
             (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -88,8 +88,10 @@ class BettingController extends Controller
         $data = $request->all();
         
         Validator::make($data, [
-                'name' => 'required|string|max:255',
-                'description' => 'required|string|max:355',
+                'title' => 'required|string|max:255',
+                'value_result' => 'required',
+                'extra_value' => 'required',
+                'value_fee' => 'required'
             ]
         )->validate();
             
@@ -116,7 +118,7 @@ class BettingController extends Controller
         
         if($register){
             $page = trans('bolao.betting_list');
-            $page2 = trans('bolao.betting');
+            $page2 = trans('bolao.bet');
             
             $breadcrumb = [
                 (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -156,7 +158,7 @@ class BettingController extends Controller
         
         if($register){
             $page = trans('bolao.betting_list');
-            $page2 = trans('bolao.betting');
+            $page2 = trans('bolao.bet');
             
             $breadcrumb = [
                 (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -184,8 +186,10 @@ class BettingController extends Controller
         $data = $request->all();
 
         Validator::make($data, [
-                'name' => 'required|string|max:255',
-                'description' => 'required|string|max:355',
+                'title' => 'required|string|max:255',
+                'value_result' => 'required',
+                'extra_value' => 'required',
+                'value_fee' => 'required'
             ]
         )->validate();
 

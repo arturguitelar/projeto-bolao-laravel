@@ -51,6 +51,7 @@ return [
     'value_result' => 'Value result',
     'extra_value' => 'Extra value',
     'value_fee' => 'Value fee',
+    'bet' => 'Bet',
 
     /* messages */
     'record_added_successfully' => 'Record added successfully!',

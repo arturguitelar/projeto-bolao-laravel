@@ -50,6 +50,7 @@ return [
     'value_result' => 'Valor resultado',
     'extra_value' => 'Valor extra',
     'value_fee' => 'Taxa',
+    'bet' => 'Bolão',
    
     /* messages */
     'record_added_successfully' => 'Registro adicionado com sucesso!',

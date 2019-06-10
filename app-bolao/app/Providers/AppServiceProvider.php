@@ -31,15 +31,27 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // User Repository
-        $this->app->bind('App\Repositories\Contracts\UserRepositoryInterface',
-        'App\Repositories\Eloquent\UserRepository');
+        $this->app->bind(
+            'App\Repositories\Contracts\UserRepositoryInterface',
+            'App\Repositories\Eloquent\UserRepository'
+        );
 
         // Permission Repository
-        $this->app->bind('App\Repositories\Contracts\PermissionRepositoryInterface',
-        'App\Repositories\Eloquent\PermissionRepository');
+        $this->app->bind(
+            'App\Repositories\Contracts\PermissionRepositoryInterface',
+            'App\Repositories\Eloquent\PermissionRepository'
+        );
 
         // Role Repository
-        $this->app->bind('App\Repositories\Contracts\RoleRepositoryInterface',
-        'App\Repositories\Eloquent\RoleRepository');
+        $this->app->bind(
+            'App\Repositories\Contracts\RoleRepositoryInterface',
+            'App\Repositories\Eloquent\RoleRepository'
+        );
+
+        // Betting Repository
+        $this->app->bind(
+            'App\Repositories\Contracts\BettingRepositoryInterface',
+            'App\Repositories\Eloquent\BettingRepository'
+        );
     }
 }
