@@ -9,11 +9,11 @@
         @breadcrumb_component(['page' => $page,'items' => $breadcrumb ?? []])
         @endbreadcrumb_component
 
-        <p>{{ __('bolao.title') }}: {{ $register->title }}</p>
-        <p>{{ __('bolao.current_round') }}: {{ $register->current_round }}</p>
-        <p>{{ __('bolao.value_result') }}: {{ $register->value_result }}</p>
-        <p>{{ __('bolao.extra_value') }}: {{ $register->extra_value }}</p>
-        <p>{{ __('bolao.value_fee') }}: {{ $register->value_fee }}</p>
+        <p><b>@lang('bolao.title'):</b> {{ $register->title }}</p>
+        <p><b>@lang('bolao.current_round'):</b> {{ $register->current_round }}</p>
+        <p><b>@lang('bolao.value_result'):</b> {{ $register->value_result }}</p>
+        <p><b>@lang('bolao.extra_value'):</b> {{ $register->extra_value }}</p>
+        <p><b>@lang('bolao.value_fee'):</b> {{ $register->value_fee }}</p>
 
         @if ($delete)            
             @form_component([

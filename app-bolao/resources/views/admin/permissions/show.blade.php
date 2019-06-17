@@ -9,8 +9,8 @@
         @breadcrumb_component(['page' => $page,'items' => $breadcrumb ?? []])
         @endbreadcrumb_component
 
-        <p>{{ __('bolao.name') }}: {{ $register->name }}</p>
-        <p>{{ __('bolao.description') }}: {{ $register->description }}</p>
+        <p><b>@lang('bolao.name'):</b> {{ $register->name }}</p>
+        <p><b>@lang('bolao.description'):</b> {{ $register->description }}</p>
 
         @if ($delete)            
             @form_component([

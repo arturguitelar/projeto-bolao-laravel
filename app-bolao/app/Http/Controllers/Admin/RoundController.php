@@ -160,12 +160,13 @@ class RoundController extends Controller
         $routeName = $this->route;
         $register = $this->model->find($id);
 
-        $user = auth()->user();
-        $listRel = $user->bettings;
-        
         if($register){
             $page = trans('bolao.round_list');
             $page2 = trans('bolao.round');
+
+            $user = auth()->user();
+            $listRel = $user->bettings;
+            $register_id = $register->betting_id;
             
             $breadcrumb = [
                 (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -174,7 +175,7 @@ class RoundController extends Controller
             ];
             
             return view('admin.'.$routeName.'.edit', compact(
-                'register', 'page', 'page2', 'routeName', 'breadcrumb', 'listRel'
+                'register', 'page', 'page2', 'routeName', 'breadcrumb', 'listRel', 'register_id'
             ));            
         }
         
