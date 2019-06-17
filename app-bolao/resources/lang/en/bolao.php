@@ -53,6 +53,13 @@ return [
     'value_fee' => 'Value fee',
     'bet' => 'Bet',
 
+    /* round */
+    'betting_title' => 'Betting',
+    'date_start' => 'Date start',
+    'date_end' => 'Date end',
+    'round_list' => 'Rounds',
+    'round' => 'Round',
+
     /* messages */
     'record_added_successfully' => 'Record added successfully!',
     'error_adding_registry' => 'Error adding registry!',

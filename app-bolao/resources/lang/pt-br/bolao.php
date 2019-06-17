@@ -51,6 +51,13 @@ return [
     'extra_value' => 'Valor extra',
     'value_fee' => 'Taxa',
     'bet' => 'Bolão',
+
+    /* round */
+    'betting_title' => 'Bolão',
+    'date_start' => 'Data inicial',
+    'date_end' => 'Data final',
+    'round_list' => 'Rodadas',
+    'round' => 'Rodada',
    
     /* messages */
     'record_added_successfully' => 'Registro adicionado com sucesso!',
