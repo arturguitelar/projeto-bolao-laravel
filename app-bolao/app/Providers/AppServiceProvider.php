@@ -53,5 +53,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\BettingRepositoryInterface',
             'App\Repositories\Eloquent\BettingRepository'
         );
+
+        // Round Repository
+        $this->app->bind(
+            'App\Repositories\Contracts\RoundRepositoryInterface',
+            'App\Repositories\Eloquent\RoundRepository'
+        );
     }
 }

@@ -42,6 +42,15 @@ Para criar as tabelas e já utlizar os seeds:
 php artisan migrate --seed
 ```
 
+#### Passos para criação de novo CRUD no admin:
+- Model e migration.
+- Controller.
+- Traduções.
+- Interface.
+- Repository.
+- Registrar no AppServiceProvider.
+- Views.
+
 > Em progresso...
 
 Este projeto utiliza a [licença MIT](https://opensource.org/licenses/MIT).
