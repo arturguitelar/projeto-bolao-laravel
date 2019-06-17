@@ -29,6 +29,7 @@ class BettingController extends Controller
         $columnList = [
             'id'=>'#',
             'title'=>trans('bolao.title'),
+            'user_name'=>trans('bolao.name'),
             'current_round'=>trans('bolao.current_round'),
             'value_result'=>trans('bolao.value_result'),
             'extra_value'=>trans('bolao.extra_value'),

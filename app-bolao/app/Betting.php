@@ -14,4 +14,10 @@ class Betting extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    // Nota: em um método acessor é obrigatório seguir o padrão getNomeAttribute
+    public function getUserNameAttribute()
+    {
+        return $this->user->name;
+    }
 }
