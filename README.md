@@ -50,6 +50,7 @@ php artisan migrate --seed
 - Repository.
 - Registrar no AppServiceProvider.
 - Views.
+- Registrar views nas rotas.
 
 > Em progresso...
 

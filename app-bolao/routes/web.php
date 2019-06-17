@@ -49,7 +49,9 @@ Route::prefix('admin')->middleware('auth')->namespace('Admin')->group(function (
 
     /* Bettings */
     Route::resource('/bettings', 'BettingController');
-    
+
+    /* Bettings */
+    Route::resource('/rounds', 'RoundController');
 });
 
 Route::prefix('admin')->middleware(['auth', 'can:acl'])->namespace('Admin')->group(function () {
