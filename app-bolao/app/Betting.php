@@ -15,6 +15,11 @@ class Betting extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function rounds()
+    {
+        return $this->hasMany('App\Round');
+    }
+
     // Nota: em um método acessor é obrigatório seguir o padrão getNomeAttribute
     public function getUserNameAttribute()
     {
