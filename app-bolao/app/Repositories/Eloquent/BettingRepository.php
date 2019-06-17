@@ -26,7 +26,7 @@ class BettingRepository extends AbstractRepository implements BettingRepositoryI
             $user = Auth()->user();
             $data['user_id'] = $user->id;
 
-            return (bool) $this->model->update($data);
+            return (bool) $register->update($data);
         } else {
             return false;
         }

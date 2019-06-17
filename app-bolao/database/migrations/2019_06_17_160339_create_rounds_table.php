@@ -17,9 +17,9 @@ class CreateRoundsTable extends Migration
             $table->increments('id');
             $table->integer('betting_id')->unsigned();
             $table->foreign('betting_id')->references('id')->on('bettings')->onDelete('cascade');
-            $table->string('betting_name');
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->string('title');
+            $table->dateTime('date_start');
+            $table->dateTime('date_end');
             $table->timestamps();
         });
     }
