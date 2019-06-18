@@ -18,6 +18,11 @@ class Round extends Model
         return $this->belongsTo('App\Betting');
     }
 
+    public function matches()
+    {
+        return $this->hasMany('App\Match');
+    }
+
     public function getBettingTitleAttribute()
     {
         return $this->betting->title;
