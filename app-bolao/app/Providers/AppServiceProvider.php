@@ -59,5 +59,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Contracts\RoundRepositoryInterface',
             'App\Repositories\Eloquent\RoundRepository'
         );
+
+        // Match Repository
+        $this->app->bind(
+            'App\Repositories\Contracts\MatchRepositoryInterface',
+            'App\Repositories\Eloquent\MatchRepository'
+        );
     }
 }

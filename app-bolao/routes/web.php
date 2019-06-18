@@ -50,8 +50,11 @@ Route::prefix('admin')->middleware('auth')->namespace('Admin')->group(function (
     /* Bettings */
     Route::resource('/bettings', 'BettingController');
 
-    /* Bettings */
+    /* Rounds */
     Route::resource('/rounds', 'RoundController');
+
+    /* Matches */
+    Route::resource('/matches', 'MatchesController');
 });
 
 Route::prefix('admin')->middleware(['auth', 'can:acl'])->namespace('Admin')->group(function () {

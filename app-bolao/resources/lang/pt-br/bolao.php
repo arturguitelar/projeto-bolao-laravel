@@ -58,6 +58,18 @@ return [
     'date_end' => 'Data final',
     'round_list' => 'Rodadas',
     'round' => 'Rodada',
+
+    /* match */
+    'stadium' => 'Estádio',
+    'team_a' => 'Time A',
+    'team_b' => 'Time B',
+    'result' => 'Resultado',
+    'scoreboard_a' => 'Placar A',
+    'scoreboard_b' => 'Placar B',
+    'date' => 'Data',
+    'match_list' => 'Partidas',
+    'match' => 'Partida',
+    'result_description' => '(A - Time A, B - Time B, E - Empate)',
    
     /* messages */
     'record_added_successfully' => 'Registro adicionado com sucesso!',

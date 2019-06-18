@@ -60,6 +60,18 @@ return [
     'round_list' => 'Rounds',
     'round' => 'Round',
 
+    /* match */
+    'stadium' => 'Stadium',
+    'team_a' => 'Team A',
+    'team_b' => 'Team B',
+    'result' => 'Result',
+    'scoreboard_a' => 'Scoreboard A',
+    'scoreboard_b' => 'Scoreboard B',
+    'date' => 'Date',
+    'match_list' => 'Matches',
+    'match' => 'Match',
+    'result_description' => '(A - Team A, B - Team B, E - Draw)',
+
     /* messages */
     'record_added_successfully' => 'Record added successfully!',
     'error_adding_registry' => 'Error adding registry!',
