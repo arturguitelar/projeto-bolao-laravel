@@ -54,7 +54,7 @@ Route::prefix('admin')->middleware('auth')->namespace('Admin')->group(function (
     Route::resource('/rounds', 'RoundController');
 
     /* Matches */
-    Route::resource('/matches', 'MatchesController');
+    Route::resource('/matches', 'MatchController');
 });
 
 Route::prefix('admin')->middleware(['auth', 'can:acl'])->namespace('Admin')->group(function () {

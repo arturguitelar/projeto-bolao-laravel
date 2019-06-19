@@ -30,7 +30,7 @@ class Match extends Model
         return date_format($date, 'd/m/Y H:i:s');
     }
 
-    public function setDateBrAttribute($value)
+    public function setDateAttribute($value)
     {
         $date = date_create($value);
 

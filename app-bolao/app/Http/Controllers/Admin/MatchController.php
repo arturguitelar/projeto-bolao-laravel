@@ -35,7 +35,7 @@ class MatchController extends Controller
             'result'=>trans('bolao.result'),
             'scoreboard_a'=>trans('bolao.scoreboard_a'),
             'scoreboard_b'=>trans('bolao.scoreboard_b'),
-            'date'=>trans('bolao.date')
+            'date_br'=>trans('bolao.date')
         ];
 
         $page = trans('bolao.match_list');
@@ -72,7 +72,7 @@ class MatchController extends Controller
         $page_create = trans('bolao.match');
         
         $user = auth()->user();
-        $listRel = $user->matches;
+        $listRel = $user->rounds;
 
         $breadcrumb = [
             (object)['url'=>route('home'),'title'=>trans('bolao.home')],
@@ -173,8 +173,8 @@ class MatchController extends Controller
             $page2 = trans('bolao.match');
 
             $user = auth()->user();
-            $listRel = $user->matches;
-            $register_id = $register->match_id;
+            $listRel = $user->rounds;
+            $register_id = $register->round_id;
             
             $breadcrumb = [
                 (object)['url'=>route('home'),'title'=>trans('bolao.home')],
