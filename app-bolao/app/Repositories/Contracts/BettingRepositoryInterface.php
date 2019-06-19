@@ -69,4 +69,9 @@ interface BettingRepositoryInterface
      * @return Bool
      */
     public function delete(int $id):Bool;
+
+    /**
+     * @return Collection Lista de apostas.
+     */
+    public function list():Collection;
 }

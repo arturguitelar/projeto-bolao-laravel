@@ -25,4 +25,9 @@ class Betting extends Model
     {
         return $this->user->name;
     }
+
+    public function getTitleAttribute($value)
+    {
+        return ucwords(mb_strtolower($value, 'UTF-8'));
+    }
 }
