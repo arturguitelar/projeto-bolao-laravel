@@ -53,5 +53,6 @@ php artisan migrate --seed
 - Registrar views nas rotas.
 
 > Em progresso...
+#### O curso ainda não acabou.Pretendo fazer updates no projeto conforme forem saindo as novas aulas do curso.
 
 Este projeto utiliza a [licença MIT](https://opensource.org/licenses/MIT).
