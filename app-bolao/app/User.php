@@ -76,4 +76,9 @@ class User extends Authenticatable
     {
         return $this->hasRole('Admin');
     }
+
+    public function myBetting()
+    {
+        return $this->belongsToMany('App\Betting');
+    }
 }

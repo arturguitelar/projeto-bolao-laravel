@@ -30,4 +30,9 @@ class Betting extends Model
     {
         return ucwords(mb_strtolower($value, 'UTF-8'));
     }
+
+    public function bettors()
+    {
+        return $this->belongsToMany('App\Betting');
+    }
 }
