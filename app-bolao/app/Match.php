@@ -36,4 +36,9 @@ class Match extends Model
 
         $this->attributes['date'] = date_format($date, 'Y-m-d H:i:s');
     }
+
+    public function getRoundTitleAttribute()
+    {
+        return $this->round->title . " - " . $this->round->betting_title;
+    }
 }
